@@ -4,7 +4,68 @@
 @import 'global';
 
 
+.header {
+  padding: 40px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
+.menu {
+  &__list {
+    display: flex;
+  }
 
+  &__list-item + &__list-item {
+    padding-left: 35px;
+  }
+  
+  &__list-link {
+    color: $title;
+    padding-bottom: 1px;
+    transition: all .3s;
+    &:hover {
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      font-weight: bold;
+    }
+  }
+
+  &__list-link--active {
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    font-weight: bold;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  &__link {
+    position: relative;
+  }
+
+  &__link + &__link {
+    padding-left: 25px;
+  }
+
+  &__num {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    top: -9px;
+    right: -14px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    @extend %quicksand-500;
+    font-weight: 500;
+  }
+}
 
 @import 'media';
